@@ -29,7 +29,7 @@ class WhatsappBase(object):
         token = request.query.get("hub.verify_token")
         challenge = request.query.get("hub.challenge")
         # Check if a token and mode were sent
-        if mode and token:
+        if mode and token and challenge:
             # Check the mode and token sent are correct
             if mode == "subscribe" and token == self.config["VERIFY_TOKEN"]:
                 # Respond with 200 OK and challenge token from the request
