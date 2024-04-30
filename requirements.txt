@@ -1,3 +1,5 @@
-flask
-python-dotenv
-openai
+flask~=3.0.3
+python-dotenv~=1.0.1
+openai~=1.23.6
+requests~=2.31.0
+aiohttp~=3.9.5
