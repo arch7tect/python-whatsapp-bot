@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 
 from aiohttp import web
 from aiohttp.web_request import Request
@@ -48,6 +49,10 @@ class WhatsappBase(object):
         return web.json_response({"text": "Hello, world"}, status=200)
 
     def run(self, *args, **kwargs):
+        logging.basicConfig(level=logging.INFO,
+                            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                            stream=sys.stdout,
+                            )
         web.run_app(self.app, *args, **kwargs)
 
 
